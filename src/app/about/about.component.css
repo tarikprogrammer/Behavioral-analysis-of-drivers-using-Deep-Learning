@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+.container{
+    margin-top: 100px;
+    position: relative;
+   
+}
+h2{
+    text-align: center;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    padding-bottom: 20px;
+    color:#DC6B19;
+
+}
+.container-about{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px #000;
+    line-height: 32px;
+}
+.container-about p{
+  font-size: 20px;
+  font-family: "Jersey 15", sans-serif;
+}
+.about-classes{
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+}
+.about-classes .left{
+    background-color: #FF204E;
+    color: #fff;
+    display: inline-block;
+    width: 230px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    left: 20%;
+    top: 20px;
+}
+.about-classes .right{
+    width: 230px;
+    padding: 20px;
+    background-color: #430A5D;
+    color: #fff;
+    border-radius: 10px;
+    position: relative;
+    left: calc(100% - 50%);
+
+}
+.about-classes::before{
+    content: "";
+    position: absolute;
+    left: 46%;
+    width: 3px;
+    height: 100%;
+    background-color: #000;
+}
+
+.left::before{
+    content: "";
+    display: block;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+      border-left: 10px solid red;
+      border-bottom: 10px solid transparent;
+	
+}
+.right::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    left: -12px;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid green;
+      border-bottom: 10px solid transparent;
+
+}
+.left p,.right p{
+    text-align: center;
+    padding: 3px;
+    font-size: 20px;
+    font-family: "Jersey 15", sans-serif;
+
+}
+.left h4,.right h4{
+    font-weight: 800;
+    font-size: 15px;
+    color: #5D12D2;
+}
+.right h4{
+    color: #FF6969;
+}

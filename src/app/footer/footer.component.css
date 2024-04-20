@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+.container{
+    margin-top: 100px;
+    width: 100%;
+    padding: 20px;
+    background-color: #322653;
+}
+p{
+    text-align: center;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #F29727;
+    
+}
+ul{
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+li a{
+    font-size: 17px;
+    color: #fff;
+}
+
+h5{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #FF0303;
+
+}

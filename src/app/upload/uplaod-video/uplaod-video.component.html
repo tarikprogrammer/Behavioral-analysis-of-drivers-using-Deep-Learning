@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="container-img">
+        <video [hidden]="!isChoosed"  [src]="url" alt="choose video"  controls height="200px" width="100%"></video>
+        <p [hidden]="isChoosed">choose video <i class="fa-solid fa-cloud-arrow-up"></i></p>
+    </div>
+    <div class="cancel">
+
+    </div>
+    <div class="input">
+        <input  id="btnvideo" type="file"  (change)="VideoChange($event)" >
+       <div class="button">
+        <label for="btnvideo">choose video </label>
+        <button class="apply"  type="button">Apply</button>
+       </div>
+    </div>
+    
+</div>

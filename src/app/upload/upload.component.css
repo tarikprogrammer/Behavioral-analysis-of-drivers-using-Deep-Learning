@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+h2{
+    text-align: center;
+    margin-top: 100px;
+    font-weight: 700;
+    font-size: 40px;
+    padding-bottom: 20px;
+    color:#DC6B19;
+    font-family: "Jersey 15", sans-serif;
+}
+.container{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 30px;
+    margin: 40px auto;
+
+}
+.container div {
+    height: 320px;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px dashed #000;
+}

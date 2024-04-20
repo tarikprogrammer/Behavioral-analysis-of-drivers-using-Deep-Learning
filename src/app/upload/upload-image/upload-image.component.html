@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="container-img">
+        <img [hidden]="!isSellected" [src]="urlImage">
+        <p [hidden]="isSellected">choose image <i class="fa-solid fa-cloud-arrow-up"></i></p>
+    </div>
+    <div class="cancel">
+
+    </div>
+    <div class="input">
+        <input  id="btnfile" type="file" (change)="changeImage($event)" >
+       <div class="button">
+        <label for="btnfile">choose image</label>
+        <button class="apply"  type="button">Apply</button>
+       </div>
+    </div>
+    
+</div>
