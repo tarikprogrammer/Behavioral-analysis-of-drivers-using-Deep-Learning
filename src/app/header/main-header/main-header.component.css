@@ -27,4 +27,26 @@ h1{
  font-weight: 400;
  font-style: normal;
  font-size: 50px;
+ text-shadow: 1px 1px 2px red, 0 0 1em #FFF455, 0 0 0.2em #FFF455;
+}
+.scroll-down{
+    padding: 10px 15px;
+    background-color:#007F73;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 20px;
+    position: absolute;
+    left:50%;
+    top: 65%;
+    transform: translate(-50%,-65%);
+    z-index: 1;
+    box-shadow: 0px 0px 12px gray;
+
+
+
+}
+i{
+    font-size: 15px;
 }

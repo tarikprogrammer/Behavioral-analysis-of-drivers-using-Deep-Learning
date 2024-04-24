@@ -12,6 +12,9 @@ import { UploadImageComponent } from './upload/upload-image/upload-image.compone
 import { UplaodVideoComponent } from './upload/uplaod-video/uplaod-video.component';
 import { OpenCamComponent } from './upload/open-cam/open-cam.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceService } from './servives/service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +27,14 @@ import { FooterComponent } from './footer/footer.component';
     UploadImageComponent,
     UplaodVideoComponent,
     OpenCamComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

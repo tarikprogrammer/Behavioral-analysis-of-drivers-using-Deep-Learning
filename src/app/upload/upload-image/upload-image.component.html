@@ -1,17 +1,23 @@
 <div class="container">
     <div class="container-img">
-        <img [hidden]="!isSellected" [src]="urlImage">
-        <p [hidden]="isSellected">choose image <i class="fa-solid fa-cloud-arrow-up"></i></p>
-    </div>
-    <div class="cancel">
-
+        <img [hidden]="!isSellected" [src]="urlImage" [hidden]="!isShowed">
+        <p class="choosed" [hidden]="isSellected">choose image <i class="fa-solid fa-cloud-arrow-up"></i></p>
     </div>
     <div class="input">
-        <input  id="btnfile" type="file" (change)="changeImage($event)" >
+        <input  id="btnfile" type="file"  (change)="onFileSelected($event)" >
        <div class="button">
         <label for="btnfile">choose image</label>
-        <button class="apply"  type="button">Apply</button>
+        <button class="apply" (click)="onUpload()"   type="button">Apply</button>
        </div>
     </div>
-    
+  
 </div>
+<div class="image-output-content" [hidden]="isShowed">
+    <button class="x" (click)="NotShow()"><i class="fa-solid fa-xmark"></i></button>
+    <img [src]="urlImage">
+    <div class="output" *ngIf="predictionResult" >
+        <p><span>Behavior of Driver:</span>{{ predictionResult.predicted_class }}</p>
+        <p><span>Probability:</span> {{ predictionResult.probability }} </p>
+    </div>
+</div> 
+
