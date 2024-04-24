@@ -70,7 +70,7 @@ button{
 }
 .output{
     position: absolute;
-    left: 10%;
+    left: 5%;
     top: 20%;
     /* transform: translate(-50%,-50%); */
     border: 1px solid #fff;
