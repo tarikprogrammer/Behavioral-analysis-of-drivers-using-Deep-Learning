@@ -8,6 +8,7 @@ import { ServiceService } from 'src/app/servives/service.service';
 export class UploadImageComponent {
   constructor(private imageService: ServiceService) { }
   isShowed:boolean=true;
+  isMuted:boolean = true;
   selectedFile: File | null = null;
   urlImage:any="";
   isSellected:boolean=false;
@@ -42,6 +43,11 @@ export class UploadImageComponent {
       }
     );
     this.isShowed=false;
+    this.isMuted = !this.isMuted;
+    let audio = new Audio();
+    audio.src="../../../assets/audio/son.mp3";
+    audio.load();
+    audio.play();
   }
   NotShow(){
     this.isShowed=true;

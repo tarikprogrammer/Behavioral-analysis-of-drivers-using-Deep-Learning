@@ -6,6 +6,5 @@ import { Component ,HostListener} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-
+ 
 }
