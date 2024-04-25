@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UplaodVideoComponent {
   isChoosed:boolean = false;
+  isShowed:boolean=true;
   url:string="";
   VideoChange(event:any){
     console.log(event)
@@ -19,5 +20,22 @@ export class UplaodVideoComponent {
       }
     }
 
+  }
+  upload(){
+    this.isShowed = false;
+    let audio = new Audio();
+    audio.src="../../../assets/audio/son.mp3";
+    audio.load();
+    audio.play();
+  }
+  NotShow(){
+    this.isShowed = true;
+    let getvideo = document.getElementById('videoUpload') as HTMLVideoElement;
+  
+    if(this.isShowed){
+        getvideo.pause();
+        console.log( getvideo?.onpause)
+
+    }
   }
 }

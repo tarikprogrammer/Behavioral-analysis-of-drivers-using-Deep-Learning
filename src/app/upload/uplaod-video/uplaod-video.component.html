@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container-img">
-        <video [hidden]="!isChoosed"  [src]="url" alt="choose video"  controls height="200px" width="100%"></video>
-        <p [hidden]="isChoosed">choose video <i class="fa-solid fa-cloud-arrow-up"></i></p>
+        <video [hidden]="!isChoosed" [hidden]="!isChoosed"  [src]="url" type="video/mp4" controls height="200px" width="100%"></video>
+        <p class="p" [hidden]="isChoosed">choose video <i class="fa-solid fa-cloud-arrow-up"></i></p>
     </div>
     <div class="cancel">
 
@@ -10,8 +10,16 @@
         <input  id="btnvideo" type="file"  (change)="VideoChange($event)" >
        <div class="button">
         <label for="btnvideo">choose video </label>
-        <button class="apply"  type="button">Apply</button>
+        <button class="apply" (click)="upload()"  type="button">Apply</button>
        </div>
     </div>
     
+</div>
+<div class="image-output-content" [hidden]="isShowed" >
+    <button class="x" (click)="NotShow()"><i class="fa-solid fa-xmark"></i></button>
+    <video id="videoUpload" [controls]="'controls'" [src]="url"></video>
+    <div class="output"  >
+        <p><span>Behavior of Driver:</span></p>
+        <p><span>Probability:</span></p>
+    </div>
 </div>
