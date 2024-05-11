@@ -1,1 +1,18 @@
-<p>open-cam works!</p>
+<div class="container">
+  <div class="container-img">
+    <video [hidden]="!isChoosed" [autoplay]="'autoplay'" id="video"></video>
+    <p class="p" [hidden]="isChoosed">open camera<i class="fa-solid fa-cloud-arrow-up"></i></p>
+  </div>
+  <div class="button">
+      <button class="open_camera" (click)="openCamera()" >open camera</button>
+      <button class="apply" (click)="apply_changes()"  type="button">Apply</button>
+    </div>
+  </div>
+<div class="image-output-content" [hidden]="isShowed" >
+  <button class="x" (click)="NotShow()"><i class="fa-solid fa-xmark"></i></button>
+  <video id="video_Zoom" autoplay height="450px" ></video>
+  <div class="output"  >
+    <p><span>Behavior of Driver:</span></p>
+    <p><span>Probability:</span></p>
+  </div>
+</div>

@@ -14,6 +14,9 @@ import { OpenCamComponent } from './upload/open-cam/open-cam.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceService } from './servives/service.service';
 import { HttpClientModule } from '@angular/common/http';
+import {RouterLink, RouterOutlet} from "@angular/router";
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderVideoComponent } from './loader-video/loader-video.component';
 
 
 @NgModule({
@@ -28,11 +31,14 @@ import { HttpClientModule } from '@angular/common/http';
     UplaodVideoComponent,
     OpenCamComponent,
     FooterComponent,
+    LoaderComponent,
+    LoaderVideoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    RouterLink,
+    RouterOutlet,
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

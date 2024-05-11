@@ -1,0 +1,30 @@
+.spinner {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  color: #FF6500;
+  background: radial-gradient(farthest-side, currentColor calc(100% - 8.6px),#0000 calc(100% - 7.2px) 0);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 18.7px),#000 calc(100% - 17.3px));
+  border-radius: 50%;
+  animation: spinner-sm4bhi 2s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  background: linear-gradient(currentColor 0 0) center,
+  linear-gradient(currentColor 0 0) center;
+  background-size: 100% 14.4px,14.4px 100%;
+  background-repeat: no-repeat;
+}
+
+.spinner::after {
+  transform: rotate(45deg);
+}
+
+@keyframes spinner-sm4bhi {
+  100% {
+    transform: rotate(1turn);
+  }
+}

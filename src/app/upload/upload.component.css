@@ -17,9 +17,20 @@ h2{
 
 }
 .container div {
-    height: 320px;
-    width: 30%;
+    height: 400px;
+    width: 50%;
     padding: 10px;
     border-radius: 10px;
     border: 2px dashed #000;
+}
+@media screen and (max-width: 866px){
+  .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .container div{
+    width: 95%;
+  }
 }

@@ -61,7 +61,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Driver-Behavior:build:production"
+              "browserTarget": "Driver-Behavior:build:production",
+              "proxyConfig": "src/proxy.conf.js"
             },
             "development": {
               "browserTarget": "Driver-Behavior:build:development"

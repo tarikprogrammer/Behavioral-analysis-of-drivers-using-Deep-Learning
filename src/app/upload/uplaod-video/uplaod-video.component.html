@@ -3,9 +3,6 @@
         <video [hidden]="!isChoosed" [hidden]="!isChoosed"  [src]="url" type="video/mp4" controls height="200px" width="100%"></video>
         <p class="p" [hidden]="isChoosed">choose video <i class="fa-solid fa-cloud-arrow-up"></i></p>
     </div>
-    <div class="cancel">
-
-    </div>
     <div class="input">
         <input  id="btnvideo" type="file"  (change)="VideoChange($event)" >
        <div class="button">
@@ -13,13 +10,16 @@
         <button class="apply" (click)="upload()"  type="button">Apply</button>
        </div>
     </div>
-    
+    <div class="loader" *ngIf="isLoader">
+       <app-loader-video></app-loader-video>
+    </div>
+
 </div>
 <div class="image-output-content" [hidden]="isShowed" >
     <button class="x" (click)="NotShow()"><i class="fa-solid fa-xmark"></i></button>
-    <video id="videoUpload" [controls]="'controls'" [src]="url"></video>
-    <div class="output"  >
-        <p><span>Behavior of Driver:</span></p>
-        <p><span>Probability:</span></p>
+    <video id="videoUpload"  (play)="onPlay()" (pause)="onPause()" [controls]="'controls'" [src]="url"></video>
+    <div class="output" >
+        <p *ngIf="statusVideo"><span>activity:{{predictionSet[0].predicted_class}}</span></p>
+        <p *ngIf="statusVideo" ><span>probability:{{predictionSet[0].probability}}</span></p>
     </div>
 </div>
