@@ -19,7 +19,7 @@
     <button class="x" (click)="NotShow()"><i class="fa-solid fa-xmark"></i></button>
     <video id="videoUpload"  (play)="onPlay()" (pause)="onPause()" [controls]="'controls'" [src]="url"></video>
     <div class="output" >
-        <p *ngIf="statusVideo"><span>activity:{{predictionSet[0].predicted_class}}</span></p>
-        <p *ngIf="statusVideo" ><span>probability:{{predictionSet[0].probability}}</span></p>
+        <p *ngIf="statusVideo"><span *ngIf="getCurrentPrediction()" >activity:{{getCurrentPrediction()?.predicted_class}}</span></p>
+        <p *ngIf="statusVideo" ><span *ngIf="getCurrentPrediction()" >probability:{{getCurrentPrediction()?.probability}}</span></p>
     </div>
 </div>

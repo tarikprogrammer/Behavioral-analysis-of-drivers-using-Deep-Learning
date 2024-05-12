@@ -13,6 +13,8 @@ export class UplaodVideoComponent implements OnInit{
   predictionSet:any=[];
   isLoader=false
   statusVideo:boolean=false;
+   predictionPart : number =0;
+  videoElement: HTMLVideoElement | undefined; /////////
 
   constructor(private services:ServiceService){
   }
@@ -27,6 +29,10 @@ export class UplaodVideoComponent implements OnInit{
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (e:any)=>{
         this.url = e.target.result;
+        this.videoElement = document.getElementById('videoUpload') as HTMLVideoElement;
+        if (this.videoElement) {
+          this.videoElement.addEventListener('timeupdate', this.onTimeUpdate.bind(this));
+        }
         this.isChoosed = true;
       }
     }
@@ -70,6 +76,43 @@ export class UplaodVideoComponent implements OnInit{
   onPause() {
     this.statusVideo=false
   }
+
+  setCurrentTime(time: number) {
+    if (this.videoElement) {
+      this.videoElement.currentTime = time;
+    }
+  }
+  updateTimeBasedOnPrediction(index: number) {
+    const time = index * 2; // Assuming prediction is made every 2 seconds
+    this.setCurrentTime(time);
+  }
+
+  onTimeUpdate(event: any) {
+    const currentTime = event.target.currentTime;
+    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 2 seconds
+    if (index < this.predictionSet.length) {
+      // Display prediction for the corresponding segment
+      console.log(this.predictionSet[index]);
+    }
+  }
+
+  getCurrentPrediction(): any {
+    if (!this.videoElement) return null;
+
+    const currentTime = this.videoElement.currentTime;
+    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 2 seconds
+
+    if (index >= 0 && index < this.predictionSet.length) {
+      return this.predictionSet[index];
+    } else {
+      return null;
+    }
+  }
+
+
+
+
+
   connectToSSE() {
     const eventSource = new EventSource('http://localhost:5000/classify');
 

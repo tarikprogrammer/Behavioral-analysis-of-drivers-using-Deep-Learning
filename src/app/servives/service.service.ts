@@ -14,7 +14,7 @@ export class ServiceService {
     formData.append('image', imageFile);
     return this.http.post<any>('http://localhost:5000/predict', formData);
   }
-  sendVideo(inputData: File, ) {
+  sendVideo(inputData: File) {
     const formData = new FormData();
     formData.append('video', inputData);
     return this.http.post<any>('http://localhost:5000/classify', formData);
