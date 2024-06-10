@@ -89,7 +89,7 @@ export class UplaodVideoComponent implements OnInit{
 
   onTimeUpdate(event: any) {
     const currentTime = event.target.currentTime;
-    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 2 seconds
+    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 1 seconds
     if (index < this.predictionSet.length) {
       // Display prediction for the corresponding segment
       console.log(this.predictionSet[index]);
@@ -100,7 +100,7 @@ export class UplaodVideoComponent implements OnInit{
     if (!this.videoElement) return null;
 
     const currentTime = this.videoElement.currentTime;
-    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 2 seconds
+    const index = Math.floor(currentTime / 2); // Assuming prediction is made every 1 seconds
 
     if (index >= 0 && index < this.predictionSet.length) {
       return this.predictionSet[index];

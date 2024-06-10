@@ -44,10 +44,10 @@ export class UploadImageComponent {
     );
     this.isShowed=false;
     this.isMuted = !this.isMuted;
-    let audio = new Audio();
+    /*let audio = new Audio();
     audio.src="../../../assets/audio/son.mp3";
     audio.load();
-    audio.play();
+    audio.play();*/
   }
   NotShow(){
     this.isShowed=true;
